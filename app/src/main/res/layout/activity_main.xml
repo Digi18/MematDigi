@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scroll"
+        android:scrollbars="none"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <androidx.viewpager.widget.ViewPager
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/homeOffers"/>
+
+            <com.google.android.material.tabs.TabLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="150dp"
+                android:id="@+id/tabLayout"
+                app:tabGravity="center"
+                app:tabIndicatorHeight="0dp"
+                app:tabBackground="@drawable/tab_selector"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    android:background="@drawable/general_gradient"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="GENERAL NOTEBOOK"
+                    android:id="@+id/general"
+                    android:padding="16dp"
+                    android:textColor="#000"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:id="@+id/viewgen"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:textSize="12sp"
+                    android:textColor="#fff"
+                    android:text="VIEW ALL"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/button"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="380dp"
+                    android:id="@+id/card"
+                    android:layout_margin="16dp"
+                    app:cardUseCompatPadding="true"
+                    app:cardBackgroundColor="#fff"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="2dp"
+                    android:layout_below="@+id/general">
+
+                    <GridView
+                        android:id="@+id/gridView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="16dp"
+                        android:columnWidth="100dp"
+                        android:gravity="center"
+                        android:horizontalSpacing="80dp"
+                        android:numColumns="2"
+                        android:stretchMode="columnWidth"
+                        android:verticalSpacing="30dp"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="PERSONALIZABLE"
+                    android:id="@+id/custom"
+                    android:layout_below="@+id/card"
+                    android:padding="16dp"
+                    android:textColor="#000"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:id="@+id/viewcust"
+                    android:layout_below="@+id/card"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:textSize="12sp"
+                    android:textColor="#fff"
+                    android:text="VIEW ALL"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/button"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/recycle"
+                    android:layout_below="@+id/viewcust"/>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>
